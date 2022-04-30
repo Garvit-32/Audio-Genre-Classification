@@ -2,7 +2,7 @@ class Config:
 
     def __init__(self):
 
-        self.batch_size = 4
+        self.batch_size = 1
 
         self.n_epochs = 20
 

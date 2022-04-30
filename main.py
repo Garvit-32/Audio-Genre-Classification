@@ -41,7 +41,7 @@ seed_everything(42)
 
 args = Config()
 
-wandb.init(project="Audio-Classificatio",
+wandb.init(project="Audio-Classification",
            name=f"{args.run_name}", tags=['wav2vec2', 'transformers'])
 
 # wandb.config.update(args)
