@@ -1,0 +1,10 @@
+saved_data/*
+wandb/*
+media/*
+Data/*
+**__pycache__**
+*.png
+*.webp
+*.zip
+debug.py
+main_copy.py
