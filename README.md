@@ -5,7 +5,7 @@
 
 ## Steps to run locally 
 
--Clone this repository and launch code:
+- Clone this repository and launch code:
     ```
     git clone https://github.com/Garvit-32/Audio-Genre-Classification.git
     cd Audio-Genre-Classification
