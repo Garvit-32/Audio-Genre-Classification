@@ -12,10 +12,19 @@
     code .
     ```
 
-- To run the application on streamlit 
-- Run the following command on terminal
+- Create and activate virtual environment 
+    ```
+    pipenv shell
+    ```
+- Use pipenv to install other dependencies from `requirements.txt`
+    ```
+    pipenv install -r requirements.txt
+
+    ```
+
+- Launch the application
     ```
     streamlit run app.py
     ```
 
-- This will generate a url. Copy the url and run into your browser.
+- Copy the generated url and run into your browser.
