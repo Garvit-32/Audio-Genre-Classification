@@ -1,6 +1,6 @@
 # Audio Genre Classification
 
-- To classifiy audio files into their respecctive genres.
+- To classifiy audio files into their respective genres.
 - The application classifies the music files into 10 different classes which are Blues, Classical, Country, Disco, HipHop, Jazz, Metal, Pop, Reggae and Rock.
 
 ## Steps to run locally 
