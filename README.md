@@ -14,6 +14,7 @@
 
 - Create and activate virtual environment 
     ```
+    pip install pipenv
     pipenv shell
     ```
 - Use pipenv to install other dependencies from `requirements.txt`
