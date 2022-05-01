@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from inference import predict
-# from pydub import AudioSegment
 import os
 import pickle
 from typing import Tuple
@@ -50,25 +49,25 @@ set_bg_hack('bg.png')
 
 
 st.markdown(
-    """<h1 style='text-align: left;margin-left :10px;color: black;font-size:80px;margin-top:-50px;'>AUDIO GENRE CLASSIFIER</h1><h1 style='text-align: left; color: white;font-size:30px;margin-top:-30px;'></h1>""",
+    """<h1 style='text-align: end;font-family : ui-rounded;color: rgb(214, 122, 127);font-size:70px;margin-top:-50px;'>AUDIO GENRE CLASSIFIER</h1>""",
     unsafe_allow_html=True)
 
 
 file = st.sidebar.file_uploader("Upload Audio To Classify", type=["wav"])
-
-rad_test = st.sidebar.radio(
-    "Select format of audio file", options=['mp3', 'wav'])
-if file is not None:
-    st.markdown(
-        """<h1 style='color:gray;'>Audio </h1>""",
-        unsafe_allow_html=True)
-    st.audio(file)
-    if st.button("Classify Audio"):
-        prediction = predict(file)
+rad_test = 'wav'
+if rad_test == 'wav':
+    if file is not None:
         st.markdown(
-            f"""<h1 style='color:gray;'>Genre </h1>""",
-            # f"""<h1 <span style='color:black;'>{prediction}</span></h1>""",
+            """<h1 style='color:gray;text-align:end; font-family:Georgia, serif;>Audio </h1>""",
             unsafe_allow_html=True)
-        st.markdown(
-            f"""<h2><span style='color:black;'>{prediction}</span></h2>""",
-            unsafe_allow_html=True)
+        st.audio(file)
+        col1, col2, col3 = st.columns(3)
+        if col2.button("Classify Audio"):
+            prediction = predict(file)
+            st.markdown(
+                f"""<h1 style='color:#778899;text-align:center;font-family:Georgia;'>Woah you chose  <span style='color:rgb(214, 122, 127); font-style:Apple Chancery'>{prediction}!!</span> </h1>""",
+                # f"""<h1 <span style='color:black;'>{prediction}</span></h1>""",
+                unsafe_allow_html=True)
+            # st.markdown(
+            #     f"""<h2><span style='color:black;'>{prediction}</span></h2>""",
+            #     unsafe_allow_html=True)

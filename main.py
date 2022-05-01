@@ -9,32 +9,19 @@ from model import Wav2Vec2ForSpeechClassification, DataCollatorCTCWithPadding, c
 
 from transformers import AutoConfig, Wav2Vec2Processor, Wav2Vec2FeatureExtractor, Trainer, TrainingArguments
 
-import librosa
-
-import numpy as np
-
 
 from typing import Any, Dict, Union, Optional, Tuple
 
 
 import wandb
-from transformers.models.wav2vec2.modeling_wav2vec2 import (
-    Wav2Vec2PreTrainedModel,
-    Wav2Vec2Model
-)
 
 import torch
-from dataclasses import dataclass
-from transformers.file_utils import ModelOutput
 from torch.cuda.amp import autocast
 
 from utils import *
 
 import warnings
 warnings.filterwarnings('ignore')
-
-
-data = []
 
 seed_everything(42)
 
@@ -189,6 +176,9 @@ training_args = TrainingArguments(
     per_device_eval_batch_size=args.batch_size,
 
 
+    optim=args.optimizer
+
+
     output_dir=args.model_save_path,
     overwrite_output_dir=True,
 
@@ -219,5 +209,3 @@ torch.cuda.empty_cache()
 trainer.train()
 
 wandb.finish()
-
-# resume_from_checkpoint=None,

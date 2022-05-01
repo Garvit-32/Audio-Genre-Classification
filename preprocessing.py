@@ -50,24 +50,6 @@ print('label_count')
 print(df.groupby("label").count()[["path"]])
 
 
-# train_df, test_df = train_test_split(df, test_size=0.2, stratify=df["label"])
-
-# train_df = train_df.reset_index(drop=True)
-# test_df = test_df.reset_index(drop=True)
-
-# train_df.to_csv(f"{save_path}/train.csv", encoding="utf-8", index=False)
-# test_df.to_csv(f"{save_path}/test.csv", encoding="utf-8", index=False)
-
-
-# train_df, test_df = train_test_split(df, test_size=0.2, stratify=df["label"])
-
-# train_df = train_df.reset_index(drop=True)
-# test_df = test_df.reset_index(drop=True)
-
-# train_df.to_csv(f"{save_path}/train.csv", encoding="utf-8", index=False)
-# test_df.to_csv(f"{save_path}/test.csv", encoding="utf-8", index=False)
-
-
 train_df, rest_df = train_test_split(df, test_size=0.2,  stratify=df["label"])
 valid_df, test_df = train_test_split(
     rest_df, test_size=0.5,  stratify=rest_df["label"])

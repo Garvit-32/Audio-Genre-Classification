@@ -5,21 +5,13 @@ import torchaudio
 import numpy as np
 import torch
 from transformers import Wav2Vec2FeatureExtractor
-# from transformers import AutoConfig, Wav2Vec2FeatureExtractor
 from model import Wav2Vec2ForSpeechClassification
 
 
 import os
 
 
-os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"] = "6"
-
-
-# file_path = 'Data/genres_original/pop/pop.00048.wav'
-
-
-model_name_or_path = "saved_data/wav2vec2-base-100k-voxpopuli-gtzan-music/checkpoint-7900"
+model_name_or_path = "saved_data/gtzan-music/checkpoint-7900"
 
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -53,15 +45,3 @@ def predict(file_path):
     genre = label_names[pred_ids[0]]
 
     return genre
-
-
-# label_names = [config.id2label[i] for i in range(config.num_labels)]
-
-# label_names = [config.id2label[i] for i in range(config.num_labels)]
-
-
-# y_true = [config.label2id[name] for name in result["label"]]
-# y_pred = result["predicted"]
-
-# print(y_true[:5])
-# print(y_pred[:5])

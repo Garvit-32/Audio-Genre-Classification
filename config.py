@@ -7,7 +7,9 @@ class Config:
         self.n_epochs = 20
 
         self.lr = 0.0001
-        self.warmup_steps = 2000
+        self.warmup_steps = 0
+
+        self.optimizer = 'adamw_torch'
 
         self.fp16 = True  # Mixed Precision Training
 
