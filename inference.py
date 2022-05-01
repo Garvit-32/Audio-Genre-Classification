@@ -15,10 +15,8 @@ model_name_or_path = "saved_data/gtzan-music/checkpoint-7900"
 
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-# config = AutoConfig.from_pretrained(model_name_or_path)
 feature_extractor = Wav2Vec2FeatureExtractor.from_pretrained(
     model_name_or_path)
-# sampling_rate = feature_extractor.sampling_rate
 model = Wav2Vec2ForSpeechClassification.from_pretrained(
     model_name_or_path).to(device)
 

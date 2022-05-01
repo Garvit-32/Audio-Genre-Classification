@@ -124,8 +124,6 @@ model = Wav2Vec2ForSpeechClassification.from_pretrained(
 
 model.freeze_feature_extractor()
 
-# _is_native_amp_available = True
-
 
 class CTCTrainer(Trainer):
     def training_step(self, model: nn.Module, inputs: Dict[str, Union[torch.Tensor, Any]]) -> torch.Tensor:
@@ -176,7 +174,7 @@ training_args = TrainingArguments(
     per_device_eval_batch_size=args.batch_size,
 
 
-    optim=args.optimizer
+    optim=args.optimizer,
 
 
     output_dir=args.model_save_path,

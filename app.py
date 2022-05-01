@@ -18,20 +18,8 @@ def set_bg_hack(main_bg):
     -------
     The background.
     '''
-    # set bg name
     main_bg_ext = "png"
 
-    # st.markdown(
-    #      f"""
-    #      <style>
-    #      .stApp {{
-    #          background: url('https://www.freepik.com/premium-photo/white-headphone-sweet-pastel-background_4373057.htm');
-    #          background-size: cover
-    #      }}
-    #      </style>
-    #      """,
-    #      unsafe_allow_html=True
-    #  )
     st.markdown(
         f"""
          <style>
@@ -66,8 +54,5 @@ if rad_test == 'wav':
             prediction = predict(file)
             st.markdown(
                 f"""<h1 style='color:#778899;text-align:center;font-family:Georgia;'>Woah you chose  <span style='color:rgb(214, 122, 127); font-style:Apple Chancery'>{prediction}!!</span> </h1>""",
-                # f"""<h1 <span style='color:black;'>{prediction}</span></h1>""",
+
                 unsafe_allow_html=True)
-            # st.markdown(
-            #     f"""<h2><span style='color:black;'>{prediction}</span></h2>""",
-            #     unsafe_allow_html=True)
